@@ -48,6 +48,12 @@ code {
 .picker.two {
   display: block !important;
 }
+.picker.con2,.picker.con1{
+  display: none !important;
+}
+.picker.con2.active,.picker.con1.active{
+  display: block !important;
+}
 input::-webkit-slider-thumb {
   background-color: #fff;
 }
