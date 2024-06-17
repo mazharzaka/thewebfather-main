@@ -91,8 +91,14 @@ function Contrast() {
           />
         </div>
       </div>
+      <div className="w-full flex justify-center items-center">
+        <div className="w-40 mt-1 flex justify-center rounded-lg items-center text-3xl font-bold bg-blue-600 h-20">
+          4.98 : 1
+          <HiOutlineCheckBadge className="mr-1 text-2xl text-[#2BBD82]" />{" "}
+        </div>
+      </div>
       <div
-        className="w-full mt-5   rounded-sm "
+        className="w-full mt-1   rounded-sm "
         style={{ color: color.hex, background: color1.hex }}
       >
         <div className="text-3xl">Don't forget to donate to Palestine</div>
