@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ColorPicker, useColor } from "react-color-palette";
 import { FaExchangeAlt } from "react-icons/fa";
 import {
@@ -11,9 +11,27 @@ import { HiOutlineCheckBadge } from "react-icons/hi2";
 import { MdOutlineErrorOutline } from "react-icons/md";
 
 function Contrast() {
-  // const [picker, setPicker] = useState("#03a9f4");
+  useEffect(() => {
+    let a = Object.values(color.rgb).map(function (v) {
+      v = v / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    let b = Object.values(color1.rgb).map(function (v) {
+      v = v / 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    const color1luminance = a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+    const color1luminance1 = b[0] * 0.2126 + b[1] * 0.7152 + b[2] * 0.0722;
+    console.log(color1luminance);
+    console.log(color1luminance1);
+    let ratio =
+      (Math.max(color1luminance, color1luminance1) + 0.05) /
+      (Math.min(color1luminance, color1luminance1) + 0.05);
+    setresult(ratio.toFixed(2));
+  });
   const [color, setColor] = useColor("#45D69B");
   const [color1, setColor1] = useColor("#024D6B");
+  const [result, setresult] = useState(4.98);
   const Fcolor = () => {
     const mcolor = document.querySelector(".con1");
     const mcolor1 = document.querySelector(".con2");
@@ -93,8 +111,8 @@ function Contrast() {
       </div>
       <div className="w-full flex justify-center items-center">
         <div className="w-40 mt-1 flex justify-center rounded-lg items-center text-3xl font-bold bg-blue-600 h-20">
-          4.98 : 1
-          <HiOutlineCheckBadge className="mr-1 text-2xl text-[#2BBD82]" />{" "}
+          {result} : 1
+          <HiOutlineCheckBadge className="mr-1 mt-2 text-2xl text-[#2BBD82]" />{" "}
         </div>
       </div>
       <div
