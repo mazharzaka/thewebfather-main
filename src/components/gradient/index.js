@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from "react";
-import {ColorPicker, useColor} from "react-color-palette";
+import React, { useEffect, useState } from "react";
+import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css";
-import {materialDark} from "react-syntax-highlighter/dist/esm/styles/prism";
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
-import {FaCode} from "react-icons/fa";
-import {LuCopy, LuCopyCheck} from "react-icons/lu";
+import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { FaCode } from "react-icons/fa";
+import { LuCopy, LuCopyCheck } from "react-icons/lu";
 import CopyToClipboard from "react-copy-to-clipboard";
-
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 function Gradient() {
   const [background, setBackground] = useState("");
   const [type, setType] = useState("linear");
@@ -76,18 +77,19 @@ function Gradient() {
     setcopy(false);
   };
   const Deg = (e) => {
-    const value = parseInt(e.target.value);
-    setDeg(value);
+    // const value = parseInt(e.target.value);
+    setDeg(e);
     setcopy(false);
+    console.log(e);
   };
   const Fnum = (e) => {
-    const value = parseInt(e.target.value);
-    setFnum(value);
+    setFnum(e);
+    setcopy(false);
     setcopy(false);
   };
   const Snum = (e) => {
-    const value = parseInt(e.target.value);
-    setSnum(value);
+    setSnum(e);
+    setcopy(false);
     setcopy(false);
   };
   const Type = () => {
@@ -114,14 +116,17 @@ function Gradient() {
         <div className="flex mt-3 w-full justify-center">
           <div
             id="color"
-            className="w-10 border-2 border-transparent h-6 rounded mr-6 bg-blue-100  active"
-            style={{background: color1}}
-            onClick={Fcolor}></div>
+            // className="w-10 border-2 border-transparent h-6 rounded mr-6 bg-blue-100  active"
+            // handleRender={handleRender}
+            style={{ background: color1 }}
+            onClick={Fcolor}
+          ></div>
           <div
             id="color"
-            className="w-10 border-2  border-transparent h-6 rounded bg-blue-100 "
+            // className="w-10 border-2  border-transparent h-6 rounded bg-blue-100 "
             onClick={Seccolor}
-            style={{background: color2}}></div>
+            style={{ background: color2 }}
+          ></div>
         </div>
         <div className="w-full flex flex-col mt-4">
           <label className="ml-1 mr-1 text-white">Type</label>
@@ -129,7 +134,8 @@ function Gradient() {
             <select
               onClick={Type}
               id="options"
-              className="h-7 w-4/5 mt-3 rounded border-2  border-transparent focus:outline-none ">
+              className="h-7 w-4/5 mt-3 rounded border-2  border-transparent focus:outline-none "
+            >
               <option>linear</option>
               <option>radial</option>
             </select>
@@ -143,13 +149,20 @@ function Gradient() {
             {deg}deg
           </label>
           <div className="w-full text-center">
-            <input
-              type="range"
-              min="0"
-              onChange={Deg}
-              max="360"
-              defaultValue={deg}
-              className="transparent h-1.5 w-4/5  cursor-pointer appearance-none rounded-lg border-transparent bg-blue-500"
+            <Slider
+              min={0}
+              onChange={(e) => Deg(e)}
+              max={360}
+              styles={{
+                tracks: {
+                  background: `linear-gradient(90deg, #03a9f4 0%, #43e1b0 50%, #4caf50 100%)`,
+                },
+                track: {
+                  background: "transparent",
+                },
+              }}
+              value={deg}
+              className="transparent h-1.5 w-4/5  cursor-pointer appearance-none rounded-lg border-transparent"
             />
           </div>
         </div>
@@ -160,13 +173,20 @@ function Gradient() {
             {fnum}%
           </label>
           <div className="w-full text-center">
-            <input
-              type="range"
-              min="0"
-              onChange={Fnum}
-              max="100"
-              defaultValue={fnum}
-              className="transparent h-1.5 w-4/5  cursor-pointer appearance-none rounded-lg border-transparent bg-blue-500"
+            <Slider
+              min={0}
+              onChange={(e) => Fnum(e)}
+              styles={{
+                tracks: {
+                  background: `linear-gradient(90deg, #03a9f4 0%, #43e1b0 50%, #4caf50 100%)`,
+                },
+                track: {
+                  background: "transparent",
+                },
+              }}
+              max={360}
+              value={fnum}
+              className="transparent h-1.5 w-4/5  cursor-pointer appearance-none rounded-lg border-transparent"
             />
           </div>
         </div>
@@ -177,13 +197,20 @@ function Gradient() {
             {snum}%
           </label>
           <div className="w-full text-center">
-            <input
-              type="range"
-              min="0"
-              onChange={Snum}
-              max="100"
-              defaultValue={snum}
-              className="transparent h-1.5 w-4/5  cursor-pointer appearance-none rounded-lg border-transparent bg-blue-500"
+            <Slider
+              min={0}
+              styles={{
+                tracks: {
+                  background: `linear-gradient(90deg, #03a9f4 0%, #43e1b0 50%, #4caf50 100%)`,
+                },
+                track: {
+                  background: "transparent",
+                },
+              }}
+              onChange={(e) => Snum(e)}
+              max={360}
+              value={snum}
+              className="transparent h-1.5 w-4/5  cursor-pointer appearance-none rounded-lg border-transparent"
             />
           </div>
         </div>
@@ -193,7 +220,8 @@ function Gradient() {
           className="w-72 h-44 bg-blue-600"
           style={{
             background: background,
-          }}></div>
+          }}
+        ></div>
         <div className="w-80  mt-10 bg-[#2F2F2F]">
           <div className="ml-3 flex justify-between items-center">
             <div className="text-white flex ">
@@ -205,7 +233,8 @@ function Gradient() {
             <div className="text-blue-300 transition-all hover:text-blue-600 text-xl">
               <CopyToClipboard
                 text={"background :" + background + ";"}
-                onCopy={() => setcopy(true)}>
+                onCopy={() => setcopy(true)}
+              >
                 {copy ? <LuCopyCheck className="text-blue-100" /> : <LuCopy />}
               </CopyToClipboard>
             </div>
@@ -221,73 +250,85 @@ function Gradient() {
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#03a9f4 0%,#43e1b0 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2 "
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#FF512F  0%,#DD2476 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#FFD3A5 0%,#FD6585 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#0F3443 0%,#34E89E 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#283c86 0%,#45a247 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#c0392b 0%,#8e44ad 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#8f71ff 0%,#8bffff 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#000046 0%,#1CB5E0 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#009245    0%,#FCEE21 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#fc8a15 0%,#fff6a2 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#662D8C  0%,#ED1E79 100%)",
-            }}></div>
+            }}
+          ></div>
           <div
             className="w-11 mb-2 mr-4 rounded h-12 border-2"
             onClick={handlecolor}
             style={{
               background: "linear-gradient(90deg,#614385   0%,#516395 100%)",
-            }}></div>
+            }}
+          ></div>
         </div>
       </div>
     </div>
