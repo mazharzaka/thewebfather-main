@@ -71,7 +71,7 @@ function Contrast() {
         break;
       } else if (Mcolor[0] === 255 && Mcolor[1] === 255 && Mcolor[2] === 255) {
         amount = amount * -1;
-        console.log("dark11111111111111111111111111");
+        // console.log("dark11111111111111111111111111");
       } else if (Mcolor.every((v) => v <= 0)) {
         break;
       } else if (Mcolor[0] !== 255 && Mcolor[1] !== 255 && Mcolor[2] !== 255) {
