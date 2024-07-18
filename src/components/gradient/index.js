@@ -116,14 +116,14 @@ function Gradient() {
         <div className="flex mt-3 w-full justify-center">
           <div
             id="color"
-            // className="w-10 border-2 border-transparent h-6 rounded mr-6 bg-blue-100  active"
+            className="w-10 border-2 border-transparent h-6 rounded mr-6 bg-blue-100  active"
             // handleRender={handleRender}
             style={{ background: color1 }}
             onClick={Fcolor}
           ></div>
           <div
             id="color"
-            // className="w-10 border-2  border-transparent h-6 rounded bg-blue-100 "
+            className="w-10 border-2  border-transparent h-6 rounded bg-blue-100 "
             onClick={Seccolor}
             style={{ background: color2 }}
           ></div>

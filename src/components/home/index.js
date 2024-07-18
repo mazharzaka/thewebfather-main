@@ -149,12 +149,12 @@ function Home() {
       <div className="text-white z-10 mt-12 h-[80vh]">
         <div
           className="flex ml-14 mr-14 justify-center max-h-20  
-      ">
-          <h2 className=" text-center h-full text-5xl mt-28 font-bold">
+      "
+        >
+          <h2 className=" text-center h-full md:text-5xl text-4xl mt-28 font-bold">
             The<span id="css">Web</span>Father is an{" "}
-            <span id="css">Egyptian</span> website that supports the Arabic
-            language. It creates <span id="css">Creative</span> designs for
-            websites using CSS.
+            <span id="css">Egyptian</span> website . It creates{" "}
+            <span id="css">Creative</span> designs for websites using CSS.
           </h2>
         </div>
       </div>

@@ -1,11 +1,11 @@
 import axios from "axios";
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import {FaCode} from "react-icons/fa";
-import {LuCopy, LuCopyCheck} from "react-icons/lu";
+import { FaCode } from "react-icons/fa";
+import { LuCopy, LuCopyCheck } from "react-icons/lu";
 
-import {materialDark} from "react-syntax-highlighter/dist/esm/styles/prism";
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Model from "../Model";
 function Palette() {
   const [data, setData] = useState(null);
@@ -76,11 +76,12 @@ function Palette() {
           type="text"
           id="colorinput"
           placeholder="Color code #value"
-          class="placeholder:italic placeholder:text-black-600 block text-white bg-black-400 w-72 border border-black-300 rounded-md py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-blue-600 focus:ring-1 sm:text-sm"
+          class="placeholder:italic placeholder:text-black-600 block text-white bg-black-400 w-48 md:w-72 border border-black-300 rounded-md py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-blue-600 focus:ring-1 sm:text-sm"
         />
         <button
           onClick={Generat}
-          className="rounded bg-blue-300  hover:bg-blue-200 ml-2 hover:text-white p-3">
+          className="rounded bg-blue-300  hover:bg-blue-200 ml-2 hover:text-white p-3"
+        >
           Generat
         </button>
       </div>
@@ -88,30 +89,35 @@ function Palette() {
         <div className="h-80 flex mt-4 mb-4">
           <div
             onClick={handleCopy}
-            className="w-16 rounded-[30px] [writing-mode:vertical-lr]   mr-2  flex font-bold text-xl  justify-center items-center"
-            style={{background: `${color}`}}>
+            className=" w-11 md:w-16 rounded-[30px] [writing-mode:vertical-lr]   mr-2  flex font-bold text-xl  justify-center items-center"
+            style={{ background: `${color}` }}
+          >
             {color}
           </div>
           {data === null ? (
             <>
               <div
                 onClick={handleCopy}
-                className="w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#0573A5]">
+                className=" w-11 md:w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#0573A5]"
+              >
                 #0573A5
               </div>
               <div
                 onClick={handleCopy}
-                className="w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#0696D8]">
+                className=" w-11 md:w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#0696D8]"
+              >
                 #0696D8
               </div>
               <div
                 onClick={handleCopy}
-                className="w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#16B3FA]">
+                className=" w-11 md:w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#16B3FA]"
+              >
                 #16B3FA
               </div>
               <div
                 onClick={handleCopy}
-                className="w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#47C4FC]">
+                className=" w-11 md:w-16 rounded-[30px] [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center mr-2 bg-[#47C4FC]"
+              >
                 #47C4FC
               </div>
             </>
@@ -119,7 +125,7 @@ function Palette() {
             data.colors.map((e) => (
               <CopyToClipboard text={e.hex.value}>
                 <div
-                  className="w-16 rounded-[30px] cursor-pointer mr-2 [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center"
+                  className=" w-10 md:w-16 rounded-[30px] cursor-pointer mr-2 [writing-mode:vertical-lr] font-bold text-xl  flex  justify-center items-center"
                   onClick={handleCopy}
                   style={{
                     background: `${e.hex.value}`,
@@ -127,7 +133,8 @@ function Palette() {
                       e.rgb.r * 0.299 + e.rgb.b * 0.587 + e.rgb.g * 0.114 > 130
                         ? "black"
                         : "white",
-                  }}>
+                  }}
+                >
                   {e.hex.value}
                 </div>
               </CopyToClipboard>
@@ -136,20 +143,22 @@ function Palette() {
         </div>
         <div className="flex mb-4">
           <div
-            className="h-16 rounded-full w-16 mr-2  mb-2 "
-            style={{background: `${color}`}}></div>
+            className="h-16 rounded-full w-10 md:w-16 mr-2  mb-2 "
+            style={{ background: `${color}` }}
+          ></div>
           {data === null ? (
             <>
-              <div className="h-16 rounded-full w-16 mr-2 mb-2 bg-[#0573A5]"></div>
-              <div className="h-16 rounded-full w-16 mr-2 mb-2 bg-[#0696D8]"></div>
-              <div className="h-16 rounded-full w-16 mr-2 mb-2 bg-[#16B3FA]"></div>
-              <div className="h-16 rounded-full w-16 mr-2 mb-2 bg-[#47C4FC]"></div>
+              <div className="h-16 rounded-full w-12 md:w-16 mr-2 mb-2 bg-[#0573A5]"></div>
+              <div className="h-16 rounded-full w-12 md:w-16 mr-2 mb-2 bg-[#0696D8]"></div>
+              <div className="h-16 rounded-full w-12 md:w-16 mr-2 mb-2 bg-[#16B3FA]"></div>
+              <div className="h-16 rounded-full w-12 md:w-16 mr-2 mb-2 bg-[#47C4FC]"></div>
             </>
           ) : (
             data.colors.map((e) => (
               <div
-                className="h-16 rounded-full w-16 mr-2 mb-2"
-                style={{background: `${e.hex.value}`}}></div>
+                className="h-16 rounded-full w-11 md:w-16 mr-2 mb-2"
+                style={{ background: `${e.hex.value}` }}
+              ></div>
             ))
           )}
         </div>
@@ -167,17 +176,20 @@ function Palette() {
                 <div
                   className="text-white p-1 mr-1 text-xs "
                   onClick={handleType}
-                  id="type">
+                  id="type"
+                >
                   Css
                 </div>
                 <div
                   className="text-white mr-1 p-1 text-xs"
-                  onClick={handleType}>
+                  onClick={handleType}
+                >
                   Scss
                 </div>
                 <div
                   className="text-white mr-1 p-1 text-xs"
-                  onClick={handleType}>
+                  onClick={handleType}
+                >
                   Tcss
                 </div>
                 <CopyToClipboard
@@ -240,7 +252,8 @@ function Palette() {
                         data?.colors[4].hex.value +
                         "; \n}"
                   }
-                  onCopy={() => setcopy(true)}>
+                  onCopy={() => setcopy(true)}
+                >
                   {copy ? (
                     <LuCopyCheck className="text-blue-100" />
                   ) : (

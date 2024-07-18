@@ -147,7 +147,7 @@ function Boxshadow() {
               />
             </div>
           </div>
-          <div className="w-full flex flex-col mt-4 mb-4">
+          <div className="w-full flex flex-col items-center mt-4 mb-4">
             <label className="ml-1 mr-1 flex justify-between text-blue-100">
               {" "}
               <span className="text-white">Spread radius</span>
@@ -182,135 +182,135 @@ function Boxshadow() {
           </div>
         </div>
       </div>
-      <div className=" flex mt-4  flex-wrap w-80">
+      <div className=" flex mt-4 w-72 flex-wrap md:w-80">
         <div
-          className="w-14 rounded mr-2 mb-5  h-11 "
+          className="w-14 rounded ml-2 mb-5  h-11 "
           style={{
             boxShadow: "2px 2px 5px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "5px 5px 15px rgba(255, 255, 255, 0.5)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "inset 2px 2px 5px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "0 4px 8px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "0 0 15px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "3px 3px 5px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "0 0 10px #33ff33, 0 0 20px #33ff33, 0 0 30px #33ff33",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "10px 10px 20px rgba(255, 255, 255, 0.8)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: " 5px 5px 5px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "10px 10px 40px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "2px 2px 5px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: " 2px 2px 5px rgba(0, 128, 255, 0.4)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "2px 2px 10px rgba(255, 0, 0, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "0 5px 15px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>{" "}
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: " 0px 1px 4px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: " 0 -5px 10px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "0px 48px 100px 0px rgba(255, 255, 255, 0.6)",
           }}
           onClick={handelBox}
         ></div>{" "}
         <div
-          className="w-14 rounded mr-2 mb-5 h-11 "
+          className="w-14 rounded ml-2 mb-5 h-11 "
           style={{
             boxShadow: "0px 0px 0px 3px rgba(3, 102, 214, 0.3)",
           }}
           onClick={handelBox}
         ></div>
       </div>
-      <div className="w-96  mt-10 bg-[#2F2F2F]">
+      <div className="md:w-96 w-64  mt-10 bg-[#2F2F2F]">
         <div className="ml-3 flex justify-between items-center">
           <div className="text-white flex ">
             <span className="text-blue-500 mt-1 text-xl mr-1">

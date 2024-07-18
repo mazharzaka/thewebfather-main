@@ -16,10 +16,10 @@ function Generator() {
   };
   return (
     <div className=" bg-black-200 flex flex-col items-center ">
-      <div className="flex">
+      <div className="flex items-center flex-wrap ">
         <div
           onClick={btn}
-          className="cursor-pointer transition-colors  delay-200 h-10 p-2 mt-5 mr-1 rounded text-white flex items-center justify-center bg-black-400"
+          className="cursor-pointer  transition-colors  delay-200 h-10 p-2 mt-5 mr-1 rounded text-white flex items-center justify-center bg-black-400"
         >
           All
         </div>
