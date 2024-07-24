@@ -151,7 +151,7 @@ function Home() {
           className="flex ml-14 mr-14 justify-center max-h-20  
       "
         >
-          <h2 className=" text-center h-full md:text-5xl text-4xl mt-28 font-bold">
+          <h2 className="text-left ml-9 md:ml-0 md:text-center h-full md:text-5xl text-4xl mt-28 font-bold">
             The<span id="css">Web</span>Father is an{" "}
             <span id="css">Egyptian</span> website . It creates{" "}
             <span id="css">Creative</span> designs for websites using CSS.
