@@ -164,7 +164,7 @@ function Palette() {
         </div>
         <Model colors={data?.colors} main={color} />
         {data !== null && (
-          <div className="w-96  mt-3 mb-2 bg-[#2F2F2F]">
+          <div className=" w-80 md:w-96  mt-3 mb-2 bg-[#2F2F2F]">
             <div className=" flex justify-between items-center">
               <div className="text-white flex ">
                 <span className="text-blue-500 mt-1 text-xl ml-1 mr-1">

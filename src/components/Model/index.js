@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {BsFillPaletteFill, BsPalette} from "react-icons/bs";
-import {IoMdSync} from "react-icons/io";
-import {MdOutlineChangeHistory} from "react-icons/md";
-import {RiSignpostFill} from "react-icons/ri";
+import React, { useEffect, useState } from "react";
+import { BsFillPaletteFill, BsPalette } from "react-icons/bs";
+import { IoMdSync } from "react-icons/io";
+import { MdOutlineChangeHistory } from "react-icons/md";
+import { RiSignpostFill } from "react-icons/ri";
 
-function Model({colors, main}) {
+function Model({ colors, main }) {
   const [light, setLight] = useState([]);
   const [dark, setDark] = useState([]);
   const [fcolor, setfcolor] = useState("#47C4FC");
@@ -101,7 +101,7 @@ function Model({colors, main}) {
       : card.style.removeProperty("background");
   };
   return (
-    <div className="w-[32rem] rounded-md bg-black-300">
+    <div className="w-80 md:w-[32rem] rounded-md bg-black-300">
       {light.length !== 0 || dark.length !== 0 ? (
         <div className="w-full flex mt-3  justify-between items-center">
           <div className="text-white ml-2  font-bold  text-xl">
@@ -114,7 +114,8 @@ function Model({colors, main}) {
                 // -webkit-background-clip: text;
                 backgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-              }}>
+              }}
+            >
               Web
             </span>
             City
@@ -127,7 +128,8 @@ function Model({colors, main}) {
                     : light.length !== 0
                     ? light[light.length - 1]
                     : dark[dark.length - 1],
-              }}>
+              }}
+            >
               .CSS
             </span>
           </div>
@@ -141,7 +143,8 @@ function Model({colors, main}) {
                 : light.length !== 0 && light[0].hex.value,
             }}
             id="trainshap"
-            onClick={handleTrain}>
+            onClick={handleTrain}
+          >
             <MdOutlineChangeHistory />
           </div>
         </div>
@@ -174,7 +177,8 @@ function Model({colors, main}) {
                   ? dark[dark.length - 1].hex.value
                   : dark.length !== 0 && dark[dark.length - 1],
             }}
-            id="triangle">
+            id="triangle"
+          >
             <p className="text-xs mt-4 flex border-b-[.5px] items-center flex-col text-center">
               we<span className="text-[7px] font-bold">(12px)</span>{" "}
             </p>
@@ -203,7 +207,8 @@ function Model({colors, main}) {
                   ? dark[dark.length - 1].hex.value
                   : dark.length !== 0 && dark[dark.length - 1],
             }}
-            id="triangle1">
+            id="triangle1"
+          >
             {" "}
             <p className="text-sm mt-1 flex border-b-[.5px] items-center font-extrabold flex-col  text-center">
               whether it is clear or not{" "}
@@ -257,8 +262,9 @@ function Model({colors, main}) {
         <div className="w-full  flex justify-center">
           {dark.length !== 0 ? (
             <div
-              className="w-56 ml-4 mt-1 mb-3 rounded h-fit  bg-black-600"
-              id="darkcard">
+              className="w-[9.5rem] md:w-56 ml-1 mt-1 mb-3 rounded h-fit  bg-black-600"
+              id="darkcard"
+            >
               <div className="flex justify-center items-center">
                 <RiSignpostFill
                   className="text-2xl text-[#0696D8] mr-1"
@@ -274,12 +280,13 @@ function Model({colors, main}) {
                   }}
                 />
                 <div
-                  className="text-base font-extrabold  text-[#0573A5]"
+                  className="text-xs md:text-base font-extrabold  text-[#0573A5]"
                   style={{
                     color: dark[0] && dark[0].hex ? dark[0].hex.value : dark[0],
                     // ? light[light.length - 1].hex.value
                     // : light[light.length - 1],
-                  }}>
+                  }}
+                >
                   Dark Color Test
                 </div>
               </div>
@@ -287,7 +294,8 @@ function Model({colors, main}) {
                 dark.map((e) => (
                   <div
                     className="w-full flex mt-2 items-center justify-center "
-                    style={{color: e.hex ? e.hex.value : e}}>
+                    style={{ color: e.hex ? e.hex.value : e }}
+                  >
                     <BsFillPaletteFill className="text-3xl ml-3" />
                     <BsPalette className="text-3xl ml-3 " />
                     <BsFillPaletteFill className="text-xl ml-3 " />
@@ -312,7 +320,8 @@ function Model({colors, main}) {
                         ? light[0].hex.value
                         : light[0],
                   }}
-                  onClick={Changedark}>
+                  onClick={Changedark}
+                >
                   <IoMdSync />
                 </div>
               </div>
@@ -322,8 +331,9 @@ function Model({colors, main}) {
           )}{" "}
           {light.length !== 0 ? (
             <div
-              className="w-56 ml-4 h-fit  mt-1 mb-3 rounded bg-black-200"
-              id="lightcard">
+              className="w-[9.5rem] md:w-56 ml-1 h-fit  mt-1 mb-3 rounded bg-black-200"
+              id="lightcard"
+            >
               <div className="flex justify-center items-center">
                 <RiSignpostFill
                   className="text-2xl text-[#03a9f4] mr-1"
@@ -339,7 +349,7 @@ function Model({colors, main}) {
                   }}
                 />
                 <div
-                  className="text-base font-extrabold  text-[#47C4FC]"
+                  className="text-xs md:text-base font-extrabold  text-[#47C4FC]"
                   style={{
                     color:
                       light[light.length - 1] && light[light.length - 1].hex
@@ -347,14 +357,16 @@ function Model({colors, main}) {
                         : light[light.length - 1],
                     // ? light[light.length - 1].hex.value
                     // : light[light.length - 1],
-                  }}>
+                  }}
+                >
                   Light Color Test
                 </div>
               </div>
               {light.map((e) => (
                 <div
                   className="w-full flex mt-2 items-center justify-center "
-                  style={{color: e.hex ? e.hex.value : e}}>
+                  style={{ color: e.hex ? e.hex.value : e }}
+                >
                   <BsFillPaletteFill className="text-3xl ml-3" />
                   <BsPalette className="text-3xl ml-3 " />
                   <BsFillPaletteFill className="text-xl ml-3 " />
@@ -377,7 +389,8 @@ function Model({colors, main}) {
                         : dark[dark.length - 2].hex &&
                           dark[dark.length - 2].hex.value,
                   }}
-                  onClick={Changelight}>
+                  onClick={Changelight}
+                >
                   <IoMdSync />
                 </div>
               </div>
@@ -388,10 +401,10 @@ function Model({colors, main}) {
         </div>
       ) : (
         <div className="w-full flex justify-center">
-          <div className="w-56 ml-4 mt-1 mb-3 rounded  bg-black-600">
+          <div className="w-[9.5rem] md:w-56 ml-1 mt-1 mb-3 rounded  bg-black-600">
             <div className="flex justify-center items-center">
               <RiSignpostFill className="text-2xl text-[#0696D8] mr-1" />
-              <div className="text-base font-extrabold  text-[#0573A5]">
+              <div className="text-xs md:text-base font-extrabold  text-[#0573A5]">
                 Dark Color Test
               </div>
             </div>
@@ -417,10 +430,10 @@ function Model({colors, main}) {
               </div>
             </div>
           </div>
-          <div className="w-56 ml-4 mt-1 mb-3 rounded bg-black-200">
+          <div className="w-[9.5rem] md:w-56 ml-1 mt-1 mb-3 rounded bg-black-200">
             <div className="flex justify-center items-center">
               <RiSignpostFill className="text-2xl text-[#03a9f4] mr-1" />
-              <div className="text-base font-extrabold  text-[#47C4FC]">
+              <div className="text-xs md:text-base font-extrabold  text-[#47C4FC]">
                 Light Color Test
               </div>
             </div>

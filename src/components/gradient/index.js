@@ -103,7 +103,7 @@ function Gradient() {
       : angle.classList.remove("hidden");
   };
   return (
-    <div className="flex mt-5 mb-3">
+    <div className="flex mt-5 mb-3 flex-col md:flex-row items-center">
       <div className="w-52 rounded  bg-black-400 mr-5">
         <div className="w-full picker one">
           <ColorPicker
@@ -215,9 +215,9 @@ function Gradient() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="flex flex-col items-center md:block">
         <div
-          className="w-72 h-44 bg-blue-600"
+          className="w-72 h-44 bg-blue-600 mt-1 "
           style={{
             background: background,
           }}

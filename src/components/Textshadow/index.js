@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
-import {ColorPicker, useColor} from "react-color-palette";
+import React, { useEffect, useState } from "react";
+import { ColorPicker, useColor } from "react-color-palette";
 import CopyToClipboard from "react-copy-to-clipboard";
-import {FaCode} from "react-icons/fa";
-import {LuCopy, LuCopyCheck} from "react-icons/lu";
+import { FaCode } from "react-icons/fa";
+import { LuCopy, LuCopyCheck } from "react-icons/lu";
 
-import {materialDark} from "react-syntax-highlighter/dist/esm/styles/prism";
-import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 function TextShadow() {
   const [picker, setPicker] = useState("#000000");
@@ -47,7 +47,7 @@ function TextShadow() {
     setcopy(false);
   };
   return (
-    <div className="flex mt-5 mb-3">
+    <div className="flex mt-5 mb-3 flex-col md:flex-row items-center">
       <div className="w-52 rounded  bg-black-400 mr-5">
         <div className="w-full picker one">
           <ColorPicker
@@ -61,7 +61,8 @@ function TextShadow() {
           <div
             id="color"
             className="w-10 border-2 border-transparent h-6 rounded  bg-blue-100  active"
-            style={{background: color1}}></div>
+            style={{ background: color1 }}
+          ></div>
         </div>
 
         <div className="w-full  flex flex-col mt-3" id="angle">
@@ -135,8 +136,9 @@ function TextShadow() {
       </div>{" "}
       <div>
         <div
-          className="w-80 h-28 font-semibold bg-white flex items-center justify-center text-2xl text-blue-200"
-          style={{textShadow: text, color: color1}}>
+          className="w-80 h-28 font-semibold mt-1 bg-white flex items-center justify-center text-2xl text-blue-200"
+          style={{ textShadow: text, color: color1 }}
+        >
           The Web Father Text Shadow.
         </div>
         <div className="w-80  mt-10 bg-[#2F2F2F]">
@@ -150,7 +152,8 @@ function TextShadow() {
             <div className="text-blue-300 transition-all hover:text-blue-600 text-xl">
               <CopyToClipboard
                 text={"text-shadow: " + text + ";" + "\ncolor: " + color1 + ";"}
-                onCopy={() => setcopy(true)}>
+                onCopy={() => setcopy(true)}
+              >
                 {copy ? <LuCopyCheck className="text-blue-100" /> : <LuCopy />}
               </CopyToClipboard>
             </div>
